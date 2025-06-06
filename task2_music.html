@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music World</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1580391447740-1d57d71cf99b?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px;
+      text-align: left;
+    }
+
+    header h1 {
+      color: white;
+      margin: 0;
+      font-size: 28px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-right: 1px solid #555;
+    }
+
+    nav a:last-child {
+      border-right: none;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .section {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .album-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .album-container img {
+      width: 120px;
+      height: 170px;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .album-container img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .album-container {
+        justify-content: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Music World</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Category 1</a>
+    <a href="#">Production</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Login</a>
+  </nav>
+
+  <div class="section">
+    <h2>→ Latest Album ...</h2>
+    <div class="album-container">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Minions_The_Rise_of_Gru_poster.jpg" alt="Minions">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/The_Boss_Baby_poster.jpg" alt="Boss Baby">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Shrek_poster.jpg" alt="Shrek">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Toy_Story_3_poster.jpg" alt="Toy Story">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Despicable_Me_poster.jpg" alt="Despicable Me">
+      <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Frozen_%282013_film%29_poster.jpg" alt="Frozen">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>→ TOP 10 Songs ...</h2>
+    <div class="album-container">
+      <img src="https://i1.sndcdn.com/artworks-xdEyFRLJYAGp-0-t500x500.jpg" alt="Mystical Magical - Benson Boone" title="Mystical Magical - Benson Boone">
+      <img src="https://i.scdn.co/image/ab67616d0000b2730a68d472f5fd2f1531517a46" alt="Ordinary - Alex Warren" title="Ordinary - Alex Warren">
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Four_-_One_Direction.png" alt="Night Changes - One Direction" title="Night Changes - One Direction">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/The_Weeknd_-_Save_Your_Tears.png" alt="Save Your Tears" title="Save Your Tears - The Weeknd & Ariana Grande">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Taylor_Swift_-_Lover.png" alt="Lover" title="Lover - Shawn Mendes & Taylor Swift">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/24/Dandelions_by_Ruth_B_cover.jpg" alt="Dandelions - Ruth B." title="Dandelions - Ruth B.">
+      <img src="https://i1.sndcdn.com/artworks-000168092097-lx1ehj-t500x500.jpg" alt="Pretty’s On The Inside" title="Pretty’s On The Inside - Chloe Adams">
+      <img src="https://i1.sndcdn.com/artworks-xE0hxuVAmTSP-0-t500x500.jpg" alt="Leyla - Mesto" title="Leyla - Mesto">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>→ Top 10 Artist ...</h2>
+    <div class="album-container">
+      <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Frozen_%282013_film%29_poster.jpg" alt="Frozen">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Minions_The_Rise_of_Gru_poster.jpg" alt="Minions">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Shrek_poster.jpg" alt="Shrek">
+    </div>
+  </div>
+
+</body>
+</html>
