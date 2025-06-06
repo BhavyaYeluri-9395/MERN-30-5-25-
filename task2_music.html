@@ -1,153 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Music World</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1580391447740-1d57d71cf99b?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
 
-    header {
-      background-color: #000;
-      padding: 20px;
-      text-align: left;
-    }
+        .section {
+            margin: 20px;
+        }
 
-    header h1 {
-      color: white;
-      margin: 0;
-      font-size: 28px;
-      font-family: 'Trebuchet MS', sans-serif;
-    }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #facc15;
+        }
 
-    nav {
-      background-color: #333;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            overflow-x: auto;
+            padding: 0 10px;
+        }
 
-    nav a {
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      border-right: 1px solid #555;
-    }
+        .item {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
 
-    nav a:last-child {
-      border-right: none;
-    }
+        .item:hover {
+            transform: scale(1.05);
+        }
 
-    nav a:hover {
-      background-color: #555;
-    }
+        .item-image {
+            width: 100%;
+            height: 180px;
+            background-color: #333;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
 
-    .section {
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      padding: 15px;
-      border-radius: 10px;
-    }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .section h2 {
-      border-bottom: 1px dashed #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-      font-size: 20px;
-    }
+        .item-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
 
-    .album-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+        .item-subtitle {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
 
-    .album-container img {
-      width: 120px;
-      height: 170px;
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
+        .scroll-indicator {
+            text-align: center;
+            font-size: 14px;
+            color: #888888;
+            margin-top: 8px;
+        }
 
-    .album-container img:hover {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-      .album-container {
-        justify-content: center;
-      }
-
-      nav {
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        flex: 1 1 auto;
-        text-align: center;
-      }
-    }
-  </style>
+        /* Style artist image circle */
+        .artist-item .item-image img {
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Music World</h1>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Category 1</a>
-    <a href="#">Production</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact Us</a>
-    <a href="#">Login</a>
-  </nav>
-
-  <div class="section">
-    <h2>→ Latest Album ...</h2>
-    <div class="album-container">
-      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Minions_The_Rise_of_Gru_poster.jpg" alt="Minions">
-      <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/The_Boss_Baby_poster.jpg" alt="Boss Baby">
-      <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Shrek_poster.jpg" alt="Shrek">
-      <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Toy_Story_3_poster.jpg" alt="Toy Story">
-      <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Despicable_Me_poster.jpg" alt="Despicable Me">
-      <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Frozen_%282013_film%29_poster.jpg" alt="Frozen">
+    <!-- Latest Albums Section -->
+    <div class="section">
+        <div class="section-title">Latest Albums ...</div>
+        <div class="items-grid">
+            <!-- Repeat for each album -->
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Top_Gun_Maverick_Poster.jpg" alt="Top Gun"></div>
+                <div class="item-title">Top Gun: Maverick</div>
+                <div class="item-subtitle">Soundtrack</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Black_Panther_Wakanda_Forever_poster.jpg" alt="Black Panther"></div>
+                <div class="item-title">Black Panther</div>
+                <div class="item-subtitle">Wakanda Forever</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg" alt="Spider-Man"></div>
+                <div class="item-title">Spider-Man</div>
+                <div class="item-subtitle">No Way Home</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Thor_Love_and_Thunder_poster.jpeg" alt="Thor"></div>
+                <div class="item-title">Thor</div>
+                <div class="item-subtitle">Love & Thunder</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg" alt="RRR"></div>
+                <div class="item-title">RRR</div>
+                <div class="item-subtitle">Telugu Epic</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Baahubali_2_The_Conclusion_poster.jpg" alt="Baahubali 2"></div>
+                <div class="item-title">Baahubali 2</div>
+                <div class="item-subtitle">The Conclusion</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/9/96/Pushpa_-_The_Rise.jpg" alt="Pushpa"></div>
+                <div class="item-title">Pushpa</div>
+                <div class="item-subtitle">The Rise</div>
+            </div>
+            <div class="item movie-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/d/d5/K.G.F_Chapter_2.jpg" alt="KGF"></div>
+                <div class="item-title">KGF Chapter 2</div>
+                <div class="item-subtitle">Action Drama</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">← Scroll to see more albums →</div>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>→ TOP 10 Songs ...</h2>
-    <div class="album-container">
-      <img src="https://i1.sndcdn.com/artworks-xdEyFRLJYAGp-0-t500x500.jpg" alt="Mystical Magical - Benson Boone" title="Mystical Magical - Benson Boone">
-      <img src="https://i.scdn.co/image/ab67616d0000b2730a68d472f5fd2f1531517a46" alt="Ordinary - Alex Warren" title="Ordinary - Alex Warren">
-      <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Four_-_One_Direction.png" alt="Night Changes - One Direction" title="Night Changes - One Direction">
-      <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/The_Weeknd_-_Save_Your_Tears.png" alt="Save Your Tears" title="Save Your Tears - The Weeknd & Ariana Grande">
-      <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Taylor_Swift_-_Lover.png" alt="Lover" title="Lover - Shawn Mendes & Taylor Swift">
-      <img src="https://upload.wikimedia.org/wikipedia/en/2/24/Dandelions_by_Ruth_B_cover.jpg" alt="Dandelions - Ruth B." title="Dandelions - Ruth B.">
-      <img src="https://i1.sndcdn.com/artworks-000168092097-lx1ehj-t500x500.jpg" alt="Pretty’s On The Inside" title="Pretty’s On The Inside - Chloe Adams">
-      <img src="https://i1.sndcdn.com/artworks-xE0hxuVAmTSP-0-t500x500.jpg" alt="Leyla - Mesto" title="Leyla - Mesto">
+    <!-- Top 10 Artist Section -->
+    <div class="section">
+        <div class="section-title">Top 10 Artist ...</div>
+        <div class="items-grid">
+            <!-- Repeat for each artist -->
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Benson_Boone_in_2022.jpg" alt="Benson Boone"></div>
+                <div class="item-title">Benson Boone</div>
+                <div class="item-subtitle">Pop Artist</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/The_Weeknd_in_2018.png" alt="The Weeknd"></div>
+                <div class="item-title">The Weeknd</div>
+                <div class="item-subtitle">R&B Singer</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Taylor_Swift_2_-_2019_by_Glenn_Francis.jpg" alt="Taylor Swift"></div>
+                <div class="item-title">Taylor Swift</div>
+                <div class="item-subtitle">Pop Icon</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/AR_Rahman_2017.jpg" alt="AR Rahman"></div>
+                <div class="item-title">A.R Rahman</div>
+                <div class="item-subtitle">Music Maestro</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ilayaraja.jpg" alt="Ilaiyaraaja"></div>
+                <div class="item-title">Ilaiyaraaja</div>
+                <div class="item-subtitle">Legendary Composer</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Anirudh_Ravichander_at_a_promo_event.jpg" alt="Anirudh"></div>
+                <div class="item-title">Anirudh Ravichander</div>
+                <div class="item-subtitle">Music Director</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ariana_Grande_Grammys_2020.png" alt="Ariana Grande"></div>
+                <div class="item-title">Ariana Grande</div>
+                <div class="item-subtitle">Pop Superstar</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Shawn_Mendes_2019.jpg" alt="Shawn Mendes"></div>
+                <div class="item-title">Shawn Mendes</div>
+                <div class="item-subtitle">Singer-Songwriter</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/en/7/77/Imagine_Dragons_%282017%29.jpg" alt="Imagine Dragons"></div>
+                <div class="item-title">Imagine Dragons</div>
+                <div class="item-subtitle">Rock Band</div>
+            </div>
+            <div class="item artist-item">
+                <div class="item-image"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Alex_Warren_2022.jpg" alt="Alex Warren"></div>
+                <div class="item-title">Alex Warren</div>
+                <div class="item-subtitle">Rising Star</div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>→ Top 10 Artist ...</h2>
-    <div class="album-container">
-      <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Frozen_%282013_film%29_poster.jpg" alt="Frozen">
-      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Minions_The_Rise_of_Gru_poster.jpg" alt="Minions">
-      <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Shrek_poster.jpg" alt="Shrek">
-    </div>
-  </div>
 
 </body>
 </html>
